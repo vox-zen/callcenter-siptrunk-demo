@@ -1,1 +1,11 @@
+[cs-queue]
 
+musicclass = default
+strategy = ringall
+timeout = 15
+retry = 5
+maxlen = 0
+
+member => PJSIP/1001
+member => PJSIP/1002
+member => PJSIP/1003
