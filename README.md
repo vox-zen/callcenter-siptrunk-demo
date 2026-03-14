@@ -40,23 +40,29 @@ The repository focuses on **call flow architecture**, not on SIP trunk providers
 # Inbound Call Flow
 
 Customer
+
 ↓
 -
 SIP Trunk
+
 ↓
 -
 Asterisk PBX
+
 ↓
 -
 Greeting message
+
 ↓
 -
 Press 1 to connect agent
+
 ↓
 -
 Agent Queue
--
 
+↓
+-
 If agents are busy the system plays a message and disconnects.
 
 ---
@@ -64,12 +70,15 @@ If agents are busy the system plays a message and disconnects.
 # Outbound Call Flow
 
 Agent/API
+
 ↓
 -
 Asterisk PBX
+
 ↓
 -
 SIP Trunk
+
 ↓
 -
 Customer Phone
@@ -103,3 +112,7 @@ Any SIP trunk provider can be used such as:
 - enterprise SIP trunk providers
 
 This repository does not include provider configuration.
+
+---
+
+sounds directory should contain IVR greeting audio files
