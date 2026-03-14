@@ -1,1 +1,23 @@
+[transport-udp]
+type=transport
+protocol=udp
+bind=0.0.0.0
 
+; SIP Trunk Endpoint
+
+[siptrunk]
+type=endpoint
+transport=transport-udp
+context=inbound-main
+disallow=all
+allow=ulaw
+
+[siptrunk-auth]
+type=auth
+auth_type=userpass
+username=YOUR_USERNAME
+password=YOUR_PASSWORD
+
+[siptrunk-aor]
+type=aor
+contact=sip:provider.example.com
