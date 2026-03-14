@@ -116,3 +116,9 @@ This repository does not include provider configuration.
 ---
 
 sounds directory should contain IVR greeting audio files
+
+---
+
+# License
+
+MIT
