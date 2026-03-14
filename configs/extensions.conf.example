@@ -1,1 +1,19 @@
+[inbound-main]
 
+exten => s,1,Answer()
+ same => n,Playback(welcome)
+ same => n,Playback(press-1-agent)
+ same => n,WaitExten(5)
+ same => n,Playback(vm-nobodyavail)
+ same => n,Hangup()
+
+exten => 1,1,NoOp(Routing call to agent queue)
+ same => n,Queue(cs-queue,t,,,20)
+ same => n,Playback(all-agents-busy-now)
+ same => n,Hangup()
+
+exten => t,1,Playback(vm-goodbye)
+ same => n,Hangup()
+
+exten => i,1,Playback(invalid)
+ same => n,Goto(s,1)
