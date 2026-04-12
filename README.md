@@ -1,124 +1,143 @@
-# Call Center SIP Trunk Demo
+# 📞 Call Center SIP Trunk Demo
 
-Provider-agnostic inbound and outbound call center example using SIP trunk and Asterisk.
+A simple and extensible **call center system demo** built using **Asterisk** and **SIP trunk integration**.
 
-This repository demonstrates a simple call center setup where a company can use a single business phone number to handle both **inbound customer calls** and **outbound agent calls**.
-
-The system includes:
-
-- SIP trunk integration
-- IVR greeting
-- DTMF routing
-- agent queue
-- outbound call example
-
-The repository focuses on **call flow architecture**, not on SIP trunk providers.
+This project demonstrates how to handle **inbound and outbound calls**, including IVR, DTMF routing, and agent queue distribution.
 
 ---
 
-# Features
+## 🚀 Overview
 
-- inbound customer call flow
-- IVR greeting
-- DTMF press 1 to connect agent
-- agent queue
-- outbound call example
-- provider agnostic SIP trunk configuration
+This repository simulates a basic call center workflow:
 
----
+* Incoming calls from customers
+* IVR greeting and menu
+* DTMF-based routing
+* Agent queue handling
+* Outbound calls from agents or system
 
-# Use Cases
-
-- customer service call center
-- technical support hotline
-- helpdesk
-- inbound sales
-- outbound callbacks
+Designed as a **learning tool and architecture reference** for VoIP/SIP-based systems.
 
 ---
 
-# Inbound Call Flow
+## ⚡ Features
 
-Customer
-
-↓
--
-SIP Trunk
-
-↓
--
-Asterisk PBX
-
-↓
--
-Greeting message
-
-↓
--
-Press 1 to connect agent
-
-↓
--
-Agent Queue
-
-↓
--
-If agents are busy the system plays a message and disconnects.
+* 📞 Inbound call handling via SIP trunk
+* 🎙️ IVR greeting playback
+* 🔢 DTMF routing (`Press 1 → Agent`)
+* 👨‍💻 Agent queue distribution
+* 📤 Outbound call flow support
+* 🔌 Provider-agnostic (works with any SIP trunk)
+* 🧩 Modular structure for easy customization
 
 ---
 
-# Outbound Call Flow
+## 📊 Call Flow
 
-Agent/API
+### Inbound Flow
 
-↓
--
-Asterisk PBX
+```text
+Customer → SIP Trunk → Asterisk → IVR → DTMF → Queue → Agent
+```
 
-↓
--
-SIP Trunk
+### Outbound Flow
 
-↓
--
-Customer Phone
--
-
-Used for:
-
-- callbacks
-- reminders
-- surveys
-- customer notifications
+```text
+Agent/API → Asterisk → SIP Trunk → Customer
+```
 
 ---
 
-# Example IVR Greeting
+## 🎯 Use Cases
 
-"Welcome to our company."
-
-"If you would like to connect to a customer service agent, please press 1."
-
----
-
-# Provider Support
-
-Any SIP trunk provider can be used such as:
-
-- Twilio
-- Telnyx
-- Plivo
-- Local telecom providers
-- enterprise SIP trunk providers
-
-This repository does not include provider configuration.
+* Call center systems
+* Customer support lines
+* IVR-based routing systems
+* Outbound call campaigns
+* VoIP system learning & testing
 
 ---
 
-sounds directory should contain IVR greeting audio files
+## 🛠️ Setup
+
+```bash
+git clone https://github.com/vox-zen/callcenter-siptrunk-demo.git
+cd callcenter-siptrunk-demo
+```
 
 ---
 
-# License
+## ⚙️ Configuration
 
-MIT
+1. Update SIP trunk settings in:
+
+```text
+configs/
+```
+
+2. Customize IVR audio:
+
+```text
+sounds/
+```
+
+3. Adjust dialplan / routing logic as needed
+
+---
+
+## ▶️ Usage
+
+Use this repository as a **blueprint** for your Asterisk setup:
+
+* Configure inbound routing
+* Set IVR logic
+* Connect queue to agents
+* Enable outbound calling
+
+---
+
+## 📁 Project Structure
+
+```bash
+configs/   # Asterisk & SIP configuration
+docker/    # Docker setup (optional)
+docs/      # Documentation
+scripts/   # Helper scripts
+sounds/    # IVR audio files
+```
+
+---
+
+## 💡 Example IVR
+
+> "Welcome to our company."
+> "Press 1 to connect to a customer service agent."
+
+---
+
+## 🔮 Roadmap
+
+* [ ] Add sample dialplan config
+* [ ] Add queue configuration example
+* [ ] Add Mermaid call flow diagrams
+* [ ] Add Docker-based local demo
+* [ ] Add API-triggered outbound calls
+
+---
+
+## 📌 Notes
+
+This project is intended as a **demo and reference implementation**, not a full production system.
+
+---
+
+## 👤 Author
+
+**Vizi**
+Full-Stack Developer (Communication Tools Focus)
+
+---
+
+## ⭐ Support
+
+If this project helps you, consider giving it a ⭐ on GitHub!
