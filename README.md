@@ -133,8 +133,8 @@ This project is intended as a **demo and reference implementation**, not a full 
 
 ## 👤 Author
 
-**Vizi**
-Full-Stack Developer (Communication Tools Focus)
+**Zain**
+Voice Systems Builder (Communication Systems Focus)
 
 ---
 
